@@ -1,0 +1,21 @@
+#### Get all teams
+GET http://localhost:8081/api/teams
+
+#### Get single team
+GET http://localhost:8081/api/teams/b5a94031-577b-4da0-87f1-1918e7c5f43f
+
+#### Get single team, not existing
+GET http://localhost:8081/api/teams/ac432683-b2ba-4695-94d9-806a97fce71e
+
+#### Delete team [PSG]
+DELETE http://localhost:8081/api/teams/f5872213-bf7b-4ae1-b8a5-5b70a1b90e76
+
+#### Create new team
+PUT http://localhost:8081/api/teams/3c6f1eb1-8069-44ab-988f-d7fed2b65a09
+Content-Type: application/json
+Authorization: Basic a2V2aW46dXNlcnVzZXI=
+
+{
+  "name": "Supra Kwidzyn",
+  "budget": 50000
+}

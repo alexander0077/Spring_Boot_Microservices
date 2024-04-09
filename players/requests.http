@@ -1,0 +1,72 @@
+#### Get all players
+GET http://localhost:8083/api/players
+
+#### Get single player [Dembele]
+GET http://localhost:8083/api/players/3c6f1eb1-8069-44ab-988f-d7fed2b65d11
+
+#### Get single player, not existing
+GET http://localhost:8083/api/characters/3c6f1eb1-8069-44ab-988f-d7fed2b65d80
+
+#### Get team players [PSG]
+GET http://localhost:8083/api/teams/3c6f1eb1-8069-44ab-988f-d7fed2b65a09/players
+
+#### Get team players, empty [Legia]
+GET http://localhost:8083/api/teams/f5872213-bf7b-4ae1-b8a5-5b70a1b90e90/players
+
+#### Get team players, not existing
+GET http://localhost:8083/api/teams/f5872213-bf7b-4ae1-b8a5-5b70a1b90e11/players
+
+#### Delete player [Dembele]
+DELETE http://localhost:8083/api/players/525d3e7b-bb1f-4c13-bf17-926d1a12e4c0
+
+#### Delete team [PSG]
+DELETE http://localhost:8083/api/teams/f5872213-bf7b-4ae1-b8a5-5b70a1b90e76
+
+#### Create new player
+PUT http://localhost:8083/api/players/3c6f1eb1-8069-44ab-988f-d7fed2b65d11
+Content-Type: application/json
+Authorization: Basic a2V2aW46dXNlcnVzZXI=
+
+{
+  "name": "Zielinski",
+  "shirt_number": 23,
+  "team": "3c6f1eb1-8069-44ab-988f-d7fed2b65a09"
+}
+
+#### Create new player, no existing team
+PUT http://localhost:8083/api/players/3c6f1eb1-8069-44ab-988f-d7fed2b65a25
+Content-Type: application/json
+Authorization: Basic a2V2aW46dXNlcnVzZXI=
+
+{
+  "name": "Alone",
+  "shirt_number": 99,
+  "team": "f5872213-bf7b-4ae1-b8a5-5b70a1b90e12"
+}
+
+#### Create new player to the new team
+PUT http://localhost:8083/api/players/3c6f1eb1-8069-44ab-988f-d7fed2b65a14
+Content-Type: application/json
+Authorization: Basic a2V2aW46dXNlcnVzZXI=
+
+{
+"name": "Barwinski",
+"shirt_number": 27,
+"team": "3c6f1eb1-8069-44ab-988f-d7fed2b65a09"
+}
+
+#### Get new player from new team
+GET http://localhost:8083/api/teams/3c6f1eb1-8069-44ab-988f-d7fed2b65a09/players
+
+#### Update some player data
+PATCH http://localhost:8083/api/players/3c6f1eb1-8069-44ab-988f-d7fed2b65d11
+Content-Type: application/json
+Authorization: Basic a2V2aW46dXNlcnVzZXI=
+
+{
+  "name": "abc",
+  "shirt_number": 1
+}
+
+#### Get single player [Mbappe2]
+GET http://localhost:8083/api/players/6cf194d2-8f95-45cb-af0a-3b781db6e6f0
